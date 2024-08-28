@@ -1,10 +1,36 @@
+### Create band
+POST http://localhost:8000/bands/
+Content-Type: application/json
+
+{
+    "name": "The Kinks",
+    "genre": "Rock"
+}
+
+### Create band wiht album
 POST http://localhost:8000/bands/
 Content-Type: application/json
 
 {
     "name": "Boards of Canada",
-    "genre" "Electronic"
+    "genre": "Electronic",
+    "albums": [
+        {
+            "title": "Tomorrow's Harvest",
+            "release_date": "2013-01-01"
+        },
+        {
+            "title": "Music Has The Right To Children",
+            "release_date": "1998-01-01"
+        }
+    ]
 }
+
+### Get all bands
+GET http://localhost:8000/bands
+
+### Get band by ID
+GET http://localhost:8000/bands/2
 
 ###
 GET http://localhost:8000/bands?genere=electronic
